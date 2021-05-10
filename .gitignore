@@ -2,5 +2,5 @@
 /work
 *.out
 /.nextflow/cache
-/swissprot
-/landmark
+/blast/swissprot
+/blast/landmark
