@@ -4,7 +4,6 @@
 */
 params.in = "$baseDir/hello.txt"
 params.str = "initial"
-mode = "initial"
 /*
 * extract first letter of each word in hello.txt except for 'Hello'
 */
