@@ -6,3 +6,9 @@
 /blast/landmark
 /blast/work
 /blast/.nextflow
+/hello/work
+/hello/.nextflow
+/pbs/work
+/pbs/.nextflow
+/slurm/work
+/slurm/.nextflow

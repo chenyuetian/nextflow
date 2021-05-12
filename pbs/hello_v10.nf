@@ -11,7 +11,7 @@ params.in = "$baseDir/hello.txt"
 process splitLetters {
     queue = 'checkpt'
     time = '30m'
-    clusterOptions = 'nodes=1:ppn=20 -A hpc_hpcadmin7'
+    clusterOptions = '-l nodes=1:ppn=20 -A hpc_hpcadmin7'
 
 
     input:
@@ -34,7 +34,7 @@ process combine {
  
     queue = 'checkpt'
     time = '30m'
-    clusterOptions = 'nodes=1:ppn=20 -A hpc_hpcadmin7'
+    clusterOptions = '-l nodes=1:ppn=20 -A hpc_hpcadmin7'
     input:
     path 'y' from records
     path 'z' from params.in 
