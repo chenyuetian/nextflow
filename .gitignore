@@ -4,3 +4,5 @@
 /.nextflow/cache
 /blast/swissprot
 /blast/landmark
+/blast/work
+/blast/.nextflow
