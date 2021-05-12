@@ -16,7 +16,7 @@ process splitLetters {
     output:
     path 'hello.out' into records 
 
-    script
+    script:
     template 'split.sh' 
 }
 
