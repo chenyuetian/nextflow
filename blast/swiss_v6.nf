@@ -28,6 +28,7 @@ Channel
  * BLAST matches 
  */
 process blast {
+    module 'python'
     conda '/project/ychen64/conda/envs/blast-2.11.0'
     input:
     path 'query.fa' from fasta_ch
@@ -47,6 +48,7 @@ process blast {
  * producing a file containing the matching sequences
  */
 process extract {
+    module 'python'
     conda '/project/ychen64/conda/envs/blast-2.11.0'
     input:
     path 'top_hits' from hits_ch
