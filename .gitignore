@@ -13,3 +13,5 @@
 /pbs/.nextflow
 /slurm/work
 /slurm/.nextflow
+/singularity/work
+/singularity/.nextflow
