@@ -3,7 +3,7 @@
 str = channel.value('Hello Georgia Advanced Computing Resource Center')  
 
 /*
-* extract first letter of each word in hello.txt except for 'Hello'
+* extract first letter of each word in str except for 'Hello'
 */
 process splitLetters {
 
