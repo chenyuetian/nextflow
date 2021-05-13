@@ -1,6 +1,7 @@
 .nextflow.log*
 /work
 *.out
+*.simg
 /.nextflow/cache
 /blast/swissprot
 /blast/landmark
