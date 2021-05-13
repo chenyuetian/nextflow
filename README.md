@@ -1,2 +1,3 @@
-# nextflow
-For demostration of Nextflow
+# Nextflow
+A basic demonstration of Nextflow
+
