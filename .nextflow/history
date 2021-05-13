@@ -1,9 +1,0 @@
-2021-05-02 09:08:26	2.8s	deadly_bartik	OK	e3b475a61b9515390d623fd0a0b52ffd	6b722641-a1cf-4bfc-85c4-c3b093100e29	nextflow run tutorial.nf
-2021-05-02 09:30:25	2.3s	evil_davinci	OK	158625adf74025c7c129598252bb6850	dcd93d05-8dd1-4e58-bf50-fb4d5ddd48c6	nextflow run tutorial.nf
-2021-05-02 09:30:55	2.3s	jolly_golick	OK	158625adf74025c7c129598252bb6850	171cb450-35e9-4392-8978-e5957c60db24	nextflow run tutorial.nf --resume
-2021-05-02 09:31:48	2.6s	friendly_poincare	OK	158625adf74025c7c129598252bb6850	171cb450-35e9-4392-8978-e5957c60db24	nextflow run tutorial.nf -resume
-2021-05-02 09:34:38	1.9s	nice_brahmagupta	OK	158625adf74025c7c129598252bb6850	0682b161-8648-4334-970c-78f95f87271e	nextflow run tutorial.nf --str 'Bonjour le monde'
-2021-05-02 09:58:14	1.6s	fabulous_carson	OK	158625adf74025c7c129598252bb6850	0682b161-8648-4334-970c-78f95f87271e	nextflow run tutorial.nf -resume --str 'Bonjour le monde'
-2021-05-02 14:37:58	2s	tiny_ekeblad	OK	e6d9427e5b89b6e3c7641fe7528da1ae339d2334	1268f72b-c991-4d3e-8f8f-4a3df30902c4	nextflow run hello
-2021-05-03 09:06:23	2.8s	mighty_laplace	OK	158625adf74025c7c129598252bb6850	61408a78-e375-4b12-9b34-dc96c90372ea	nextflow run tutorial.nf
-2021-05-03 09:16:42	2.8s	spontaneous_visvesvaraya	OK	158625adf74025c7c129598252bb6850	f6380c04-e923-4c0e-b752-ef26c2b9cafe	nextflow run tutorial.nf
