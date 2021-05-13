@@ -1,0 +1,91 @@
+BootStrap: docker
+From: ubuntu:16.04
+
+%labels
+    AUTHOR Yuwu Chen 
+
+%pre
+
+
+%post
+    apt-get update
+    apt-get install -y vim
+    apt-get install -y wget
+    apt-get install -y gzip
+    apt-get install -y bzip2
+    apt-get install -y curl
+    apt-get install -y unzip
+    apt-get install -y less
+    apt-get install -y perl
+
+    ## gcc 9
+    apt install -y software-properties-common
+    add-apt-repository -y ppa:ubuntu-toolchain-r/test
+    apt update
+    apt install -y gcc-9 g++-9
+    
+# install anaconda
+    if [ ! -d /usr/local/anaconda ]; then
+       wget https://repo.continuum.io/miniconda/Miniconda3-4.5.4-Linux-x86_64.sh -O ~/anaconda.sh 
+         bash ~/anaconda.sh -b -p /usr/local/anaconda && rm ~/anaconda.sh
+    fi
+
+
+# set anaconda path
+    export PATH=$PATH:/usr/local/anaconda/bin
+    conda update conda
+
+    cd /usr/local/anaconda/lib
+    ln -s libtinfo.so.5 libtinfo.so.6
+    cd -
+
+    conda config --add channels r
+    conda config --add channels defaults
+    conda config --add channels conda-forge
+    conda config --add channels bioconda
+
+# Let us save some space
+    conda clean --packages -y
+    
+# external tools
+    
+    echo "Installing nextflow:"
+    conda install -y -c bioconda nextflow=20.10.0
+    
+    echo "Installing blast:"
+    conda install -y bioconda::blast conda-forge::gnutls conda-forge::nettle conda-forge::curl   
+    
+    echo "Installing blast databases swissprot:"
+    cd /usr/local
+    export DATABASE=swissprot
+    mkdir $DATABASE && cd $DATABASE
+    wget https://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/swissprot.gz
+    gzip -d swissprot.gz
+    makeblastdb -in swissprot -parse_seqids -out swissprot -dbtype prot    
+
+    echo "Installing R:"
+    conda update readline
+    conda install -y -c r r-base
+    
+    echo "Installing TMalign:"
+    cd /usr/local
+    mkdir tmalign && cd tmalign
+    wget https://zhanglab.dcmb.med.umich.edu/TM-align/TMalign.cpp
+    g++-9 TMalign.cpp -o tmalign
+
+# creating /work & /project bind point
+    mkdir /work
+    mkdir /project
+
+# creating bind point for reading the content of PBS_NODEFILE
+    mkdir -p /var/spool/torque/aux
+
+# creating bind point for getting ssh host keys
+    mkdir -p /etc/ssh/
+    cd /etc/ssh
+    touch ssh_known_hosts   
+    
+%environment
+    export PATH=$PATH:/usr/local/anaconda/bin:/usr/local/tmalign
+    export LANG=C    
+
